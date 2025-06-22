@@ -38,6 +38,11 @@
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
+                        <!-- Update Password -->
+                        <x-dropdown-link :href="route('profile.password.edit')">
+                            {{ __('Update Password') }}
+                        </x-dropdown-link>
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -82,6 +87,11 @@
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Profile') }}
+                </x-responsive-nav-link>
+
+                <!-- Update Password -->
+                <x-responsive-nav-link :href="route('profile.password.edit')">
+                    {{ __('Update Password') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->

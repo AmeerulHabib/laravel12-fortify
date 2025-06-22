@@ -34,14 +34,15 @@
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
+            {{-- Pass a status message to the session to indicate success --}}
             @if (session('status') === 'password-updated')
                 <p
                     x-data="{ show: true }"
                     x-show="show"
                     x-transition
-                    x-init="setTimeout(() => show = false, 2000)"
+                    x-init="setTimeout(() => show = false, 10000)"
                     class="text-sm text-gray-600"
-                >{{ __('Saved.') }}</p>
+                >{{ __('Your Password has been updated!.') }}</p>
             @endif
         </div>
     </form>

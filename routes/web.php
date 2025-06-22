@@ -15,6 +15,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Additional routes for profile management
+    Route::get('/profile/password', function () {
+        return view('profile.password');
+    })->name('profile.password.edit');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
