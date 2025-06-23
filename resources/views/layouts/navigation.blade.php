@@ -43,6 +43,11 @@
                             {{ __('Update Password') }}
                         </x-dropdown-link>
 
+                        <!-- Security Settings -->
+                        <x-dropdown-link :href="route('security.index')">
+                            {{ __('Security Settings') }}
+                        </x-dropdown-link>
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -92,6 +97,11 @@
                 <!-- Update Password -->
                 <x-responsive-nav-link :href="route('profile.password.edit')">
                     {{ __('Update Password') }}
+                </x-responsive-nav-link>
+
+                <!-- Security Settings -->
+                <x-responsive-nav-link :href="route('security.index')">
+                    {{ __('Security Settings') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->

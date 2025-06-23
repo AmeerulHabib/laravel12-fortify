@@ -20,6 +20,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/password', function () {
         return view('profile.password');
     })->name('profile.password.edit');
+
+    Route::middleware(['auth', 'verified'])->group(function () {
+        // …existing routes…
+
+        // Security page (empty for now)
+        Route::get('/security', function () {
+            return view('security.index');
+        })->name('security.index');
+    });
 });
 
 require __DIR__ . '/auth.php';
